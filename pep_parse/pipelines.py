@@ -4,10 +4,6 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).parent.parent
 
-now = dt.datetime.now()
-now_formatted = now.strftime('%Y-%m-%d_%H-%M-%S')
-file_name = f'results/status_summary_{now_formatted}.csv'
-
 
 class PepParsePipeline:
     def open_spider(self, spider):
