@@ -13,13 +13,10 @@ class PepParsePipeline:
     def open_spider(self, spider):
         self.statuses = {}
         self.count = 0
-        pass
 
     def process_item(self, item, spider):
-        if item['status'] not in self.statuses:
-            self.statuses[item['status']] = 1
-        else:
-            self.statuses[item['status']] += 1
+        status = item['status']
+        self.statuses[status] = self.statuses.get(status, 0) + 1
         self.count += 1
         return item
 
